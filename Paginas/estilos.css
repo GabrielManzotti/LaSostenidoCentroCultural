@@ -37,7 +37,7 @@ a:hover {
 
 .bodyImagenPrincipal {
     padding-top: 100px;
-    background-image: url("/Imagenes/zanjon_1.jpg");
+    background-image: url("./Imagenes/zanjon_1.jpg");
     background-size: cover;
     
     background-position: center;
