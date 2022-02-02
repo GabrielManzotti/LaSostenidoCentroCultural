@@ -14,6 +14,38 @@ let descuentoNivelAvanzado = 0.65;
 let resultadoNivelAvanzado = parseFloat(resultadoNivelIntermedio);
 
 
+const arrayListadoCursos = [];
+let arrayListadoCursosFiltrado = [];
+
+class ListadoCursos {
+  constructor(listaCursos) {
+    this.nivel = listaCursos.nivel;
+    this.diaSemana = listaCursos.diaSemana;
+    this.cantHoras = listaCursos.cantHoras;
+    this.fechaInicio = listaCursos.fechaInicio;
+    this.fechaFin = listaCursos.fechaFin;
+    this.valorBruto = listaCursos.valorBruto
+      }
+}
+
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Inicial", diaSemana: "Lunes", cantHoras: 15, fechaInicio: "02/02/2022", fechaFin:"04/04/2022",valorBruto: 3000 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Inicial", diaSemana: "Martes", cantHoras: 15, fechaInicio: "10/02/2022", fechaFin:"14/04/2022",valorBruto: 3000 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Inicial", diaSemana: "Jueves", cantHoras: 15, fechaInicio: "22/02/2022", fechaFin:"24/04/2022",valorBruto: 3000 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Intermedio", diaSemana: "Lunes", cantHoras: 20, fechaInicio: "02/02/2022", fechaFin:"24/04/2022",valorBruto: 3500 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Intermedio", diaSemana: "Martes", cantHoras: 20, fechaInicio: "02/02/2022", fechaFin:"04/04/2022",valorBruto: 3500 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Intermedio", diaSemana: "Lunes", cantHoras: 20, fechaInicio: "02/02/2022", fechaFin:"04/04/2022",valorBruto: 3500 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", diaSemana: "Martes", cantHoras: 40, fechaInicio: "25/02/2022", fechaFin:"04/04/2022",valorBruto: 4000 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", diaSemana: "Vierens", cantHoras: 40, fechaInicio: "30/02/2022", fechaFin:"04/04/2022",valorBruto: 4000 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", diaSemana: "Jueves", cantHoras: 40, fechaInicio: "20/02/2022", fechaFin:"04/04/2022",valorBruto: 4000 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", diaSemana: "Sabado", cantHoras: 40, fechaInicio: "28/02/2022", fechaFin:"04/04/2022",valorBruto: 4000 }))
+
+
+// console.log(arrayListadoCursos);
+
+
+
+
+
 function precioHora() {
   nivel = prompt("Elegí tu nivel", "Inicial");
   console.log(nivel);
@@ -54,7 +86,12 @@ function seleccionDia() {
 seleccionDia();
 
 
-class DatosCurso {
+arrayListadoCursosFiltrado = arrayListadoCursos.filter(variable => variable.diaSemana === diaSemanal);
+console.log(arrayListadoCursosFiltrado)
+
+
+
+class CursoElegido {
   constructor(curso) {
     this.nivel = curso.nivel;
     this.totalCurso = curso.valor;
@@ -84,7 +121,7 @@ class DatosCurso {
   }
 }
 
-const datosCurso = new DatosCurso({nivel: nivel, valor: totalCurso, diaSemanal:diaSemanal, descuento: descuento});
+const datosCurso = new CursoElegido({nivel: nivel, valor: totalCurso, diaSemanal:diaSemanal, descuento: descuento});
 
 
 datosCurso.aplicaDescuento();
@@ -92,7 +129,6 @@ datosCurso.aplicaDescuento();
 console.log(datosCurso.diaSemanal)
 
 console.log(datosCurso)
-
 
 
 
