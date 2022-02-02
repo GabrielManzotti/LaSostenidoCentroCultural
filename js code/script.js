@@ -78,19 +78,26 @@ function precioHora() {
 
 precioHora();
 
+arrayListadoCursosFiltrado = arrayListadoCursos.filter(cursosPorNivel => cursosPorNivel.nivel === nivel);
+console.log(arrayListadoCursosFiltrado)
 
+
+
+
+
+//elige día
 function seleccionDia() {
   diaSemanal = prompt("Elegí el día de la semana que querés iniciar", "Lunes");
   console.log(diaSemanal);
 }
 seleccionDia();
 
-
-arrayListadoCursosFiltrado = arrayListadoCursos.filter(variable => variable.diaSemana === diaSemanal);
+// devuelve solo los cursos del día seleccionado conjunto con el nivel: EJ solo cursos iniciales de los lunes
+arrayListadoCursosFiltrado = arrayListadoCursos.filter(cursosPorDia => (cursosPorDia.diaSemana === diaSemanal)&&(cursosPorDia.nivel === nivel));
 console.log(arrayListadoCursosFiltrado)
 
 
-
+//se crea el objeto del curso elegido
 class CursoElegido {
   constructor(curso) {
     this.nivel = curso.nivel;
@@ -101,7 +108,7 @@ class CursoElegido {
     
   }
 
-  aplicaDescuento() {
+  aplicaDescuento() { 
     if (nivel="Inicial"){
       this.totalNeto = this.totalCurso * this.descuento
       console.log(`Aplica descuento de ${descuentoNivelInicial}. El total neto es de: ${this.totalNeto}`) 
