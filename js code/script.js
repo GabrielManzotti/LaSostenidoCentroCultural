@@ -11,7 +11,7 @@ let resultadoNivelIntermedio = parseFloat(precioHoraNivelIntermedio * cantidadCl
 let precioHoraNivelAvanzado = parseFloat(4000);
 let cantidadClasesNivelAvanzado = parseInt(25);
 let descuentoNivelAvanzado = 0.65;
-let resultadoNivelAvanzado = parseFloat(resultadoNivelIntermedio);
+let resultadoNivelAvanzado = parseFloat(precioHoraNivelAvanzado*cantidadClasesNivelAvanzado);
 
 
 const arrayListadoCursos = [];
@@ -21,28 +21,28 @@ class ListadoCursos {
   constructor(listaCursos) {
     this.nivel = listaCursos.nivel;
     this.diaSemana = listaCursos.diaSemana;
+    this.numeroDiaSemana = listaCursos.numeroDiaSemana
     this.cantHoras = listaCursos.cantHoras;
     this.fechaInicio = listaCursos.fechaInicio;
     this.fechaFin = listaCursos.fechaFin;
     this.valorBruto = listaCursos.valorBruto
+    this.idCurso = listaCursos.idCurso
       }
 }
 
-arrayListadoCursos.push( new ListadoCursos ({nivel: "Inicial", diaSemana: "Lunes", cantHoras: 15, fechaInicio: "02/02/2022", fechaFin:"04/04/2022",valorBruto: 3000 }))
-arrayListadoCursos.push( new ListadoCursos ({nivel: "Inicial", diaSemana: "Martes", cantHoras: 15, fechaInicio: "10/02/2022", fechaFin:"14/04/2022",valorBruto: 3000 }))
-arrayListadoCursos.push( new ListadoCursos ({nivel: "Inicial", diaSemana: "Jueves", cantHoras: 15, fechaInicio: "22/02/2022", fechaFin:"24/04/2022",valorBruto: 3000 }))
-arrayListadoCursos.push( new ListadoCursos ({nivel: "Intermedio", diaSemana: "Lunes", cantHoras: 20, fechaInicio: "02/02/2022", fechaFin:"24/04/2022",valorBruto: 3500 }))
-arrayListadoCursos.push( new ListadoCursos ({nivel: "Intermedio", diaSemana: "Martes", cantHoras: 20, fechaInicio: "02/02/2022", fechaFin:"04/04/2022",valorBruto: 3500 }))
-arrayListadoCursos.push( new ListadoCursos ({nivel: "Intermedio", diaSemana: "Lunes", cantHoras: 20, fechaInicio: "02/02/2022", fechaFin:"04/04/2022",valorBruto: 3500 }))
-arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", diaSemana: "Martes", cantHoras: 40, fechaInicio: "25/02/2022", fechaFin:"04/04/2022",valorBruto: 4000 }))
-arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", diaSemana: "Vierens", cantHoras: 40, fechaInicio: "30/02/2022", fechaFin:"04/04/2022",valorBruto: 4000 }))
-arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", diaSemana: "Jueves", cantHoras: 40, fechaInicio: "20/02/2022", fechaFin:"04/04/2022",valorBruto: 4000 }))
-arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", diaSemana: "Sabado", cantHoras: 40, fechaInicio: "28/02/2022", fechaFin:"04/04/2022",valorBruto: 4000 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Inicial", numeroDiaSemana: 1, diaSemana: "Lunes", cantHoras: 15, fechaInicio: "March 03, 2022", fechaFin:"April 04, 2022",valorBruto: 3000, idCurso: 001 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Inicial", numeroDiaSemana: 5, diaSemana: "Viernes", cantHoras: 15, fechaInicio: "10/02/2022", fechaFin:"14/04/2022",valorBruto: 3000, idCurso: 002 }))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Inicial", numeroDiaSemana: 4,  diaSemana: "Jueves", cantHoras: 15, fechaInicio: "22/02/2022", fechaFin:"24/04/2022",valorBruto: 3000, idCurso:003}))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Intermedio",  numeroDiaSemana: 1, diaSemana: "Lunes", cantHoras: 20, fechaInicio: "02/02/2022", fechaFin:"24/04/2022",valorBruto: 3500, idCurso:004}))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Intermedio", numeroDiaSemana: 2, diaSemana: "Martes", cantHoras: 20, fechaInicio: "02/02/2022", fechaFin:"04/04/2022",valorBruto: 3500, idCurso:005}))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Intermedio", numeroDiaSemana: 1, diaSemana: "Lunes", cantHoras: 20, fechaInicio: "02/02/2022", fechaFin:"04/04/2022",valorBruto: 3500, idCurso:006}))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", numeroDiaSemana: 2, diaSemana: "Martes", cantHoras: 40, fechaInicio: "25/02/2022", fechaFin:"04/04/2022",valorBruto: 4000, idCurso:007}))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", numeroDiaSemana: 5, diaSemana: "Vierens", cantHoras: 40, fechaInicio: "30/02/2022", fechaFin:"04/04/2022",valorBruto: 4000, idCurso:010}))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", numeroDiaSemana: 4, diaSemana: "Jueves", cantHoras: 40, fechaInicio: "20/02/2022", fechaFin:"04/04/2022",valorBruto: 4000, idCurso:011}))
+arrayListadoCursos.push( new ListadoCursos ({nivel: "Avanzado", numeroDiaSemana: 6, diaSemana: "Sabado", cantHoras: 40, fechaInicio: "28/02/2022", fechaFin:"04/04/2022",valorBruto: 4000, idCurso:012}))
 
 
 // console.log(arrayListadoCursos);
-
-
 
 
 
@@ -81,7 +81,25 @@ precioHora();
 arrayListadoCursosFiltrado = arrayListadoCursos.filter(cursosPorNivel => cursosPorNivel.nivel === nivel);
 console.log(arrayListadoCursosFiltrado)
 
+let copiaArrayListadoCursosFiltrado = Object.assign([], arrayListadoCursosFiltrado); // deep copy - Copia profunda
 
+
+function ordenarPorDia (){
+copiaArrayListadoCursosFiltrado.sort( (a, b) => {
+  if(a.numeroDiaSemana < b.numeroDiaSemana ) {
+    return -1;
+  }
+  if(a.numeroDiaSemana  > b.numeroDiaSemana ) {
+    return 1;
+  }})
+
+
+
+console.log("lo de abajo es el curso ordenado por día")
+console.log(copiaArrayListadoCursosFiltrado)
+}
+
+ordenarPorDia()
 
 
 
@@ -92,8 +110,11 @@ function seleccionDia() {
 }
 seleccionDia();
 
+
+
 // devuelve solo los cursos del día seleccionado conjunto con el nivel: EJ solo cursos iniciales de los lunes
 arrayListadoCursosFiltrado = arrayListadoCursos.filter(cursosPorDia => (cursosPorDia.diaSemana === diaSemanal)&&(cursosPorDia.nivel === nivel));
+console.log("Lo de abajo es arrayListadoCursosFiltrado")
 console.log(arrayListadoCursosFiltrado)
 
 
@@ -105,6 +126,7 @@ class CursoElegido {
     this.diaSemanal = curso.diaSemanal;
     this.descuento = curso.descuento;
     this.totalNeto = curso.totalNeto;
+    this.idCurso = curso.idCurso;
     
   }
 
@@ -138,6 +160,41 @@ console.log(datosCurso.diaSemanal)
 console.log(datosCurso)
 
 
+
+
+
+
+
+function fechaEnDDMMYYYY(){
+  
+	let fechaCursoFormato = new Date("March 03,2022");
+    let dd = fechaCursoFormato.getDate();
+    let mm = fechaCursoFormato.getMonth()+1; //January is 0!
+
+    let yyyy = fechaCursoFormato.getFullYear();
+    if(dd<10){
+        dd='0'+dd
+    }
+    if(mm<10){
+        mm='0'+mm
+    }
+    fechaCursoFormato = dd+'/'+mm+'/'+yyyy;
+    
+    console.log(`La fecha del curso con formato es: ${fechaCursoFormato}`) 
+   
+  
+    }
+
+    fechaEnDDMMYYYY()
+
+
+    let today = new Date();
+    let fechaCursoElegido = new Date("March 03, 2022")
+    const milisegundosPorDia = 86400000;
+    console.log( (fechaCursoElegido - today ) / milisegundosPorDia)
+
+
+   
 
 
 
