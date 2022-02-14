@@ -80,17 +80,78 @@
             <div class="tituloSubrayado">
                 <h3 class="tituloContainerDesplegable">Comencemos seleccionando el nivel</h3>
             </div>
-            <select class="form-select text-black bg-light labelBGAndMore" aria-label="">
-                <option   selected>Seleccioná tu nivel</option>
-                <option class="desplegableNivel" value="1">Inicial</option>
-                <option class="desplegableNivel" value="2">Intermedio</option>
-                <option class="desplegableNivel" value="3">Avanzado</option>
+           
+ 
+            <select id="selectNivel" class="form-select text-black bg-light labelBGAndMore"  aria-label="">
+                <option selected>Seleccioná tu nivel</option>
+                <option class="desplegableNivel" id="1" value="Inicial">Inicial</option>
+                <option class="desplegableNivel" id="2" value="Intermedio">Intermedio</option>
+                <option class="desplegableNivel" id="3" value="Avanzado">Avanzado</option>
             </select>
+            <div id="errorSeleccionNivel">
 
-            <div class="botonContinuar">
-                <a type="button" href="" class="btn btn-dark  buttonRadiousAndMoreContinue">Continuar</a>
+            </div>
+
+            <a type="button" href="#eligeDia" id="continuarValidaNivel"
+            class="btn btn-dark  buttonRadiousAndMoreContinue">Continuar</a>
+     
+        </div>
     </section>
-    </div>
+
+    <section id="eligeDia" class="contenedorSeleccionDia">
+
+        <div class="containerDesplegableyTitulo">
+            <div class="tituloSubrayadoDia">
+                <h3 class="tituloContainerDesplegable">Seleccioná el día que te gustaría cursar</h3>
+            </div>
+            <select id="selectDia" class="form-select text-black bg-light labelBGAndMore" aria-label="">
+                <option selected>Seleccioná el día</option>
+                <option class="desplegableNivel" id="Lunes" value="Lunes">Lunes</option>
+                <option class="desplegableNivel" id="Martes" value="Martes">Martes</option>
+                <option class="desplegableNivel" id="Miercoles" value="Miercoles">Miercoles</option>
+                <option class="desplegableNivel" id="Jueves" value="Jueves">Jueves</option>
+                <option class="desplegableNivel" id="Viernes" value="Viernes">Viernes</option>
+                <option class="desplegableNivel" id="Sabado" value="Sabado">Sabado</option>
+
+            </select>
+            <div id="errorSeleccionDia">
+
+            </div>
+
+            <div class="botonContinuar" id="continuarValidaDia">
+                <a type="button" href="#listadoDeCursos"
+                    class="btn btn-dark  buttonRadiousAndMoreContinue">Continuar</a>
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section id="listadoDeCursos" class="contenedorSeleccionCurso">
+
+        <div class="contenedorPrincipalSeleccionCurso">
+            <div class="tituloSubrayadoListadoCursos">
+                <h3 class="tituloContainerDesplegable">Elegí el curso que querés reservar</h3>
+            </div>
+           <div id="sinDatosParaMostrar" class="sinDatosParaMostrarDiv">
+            <div class="botonBuscar" id="buscarCursos">
+                <a type="button" 
+                    class="btn btn-dark  buttonRadiousAndMoreContinue">Buscar cursos</a>
+            </div>
+             </div>
+    </section>
+
+    <section class="seccionDeListado">
+        <ul id="listado" class="contenedorUlListados">
+            <li class="liListados">
+            </li>
+        </ul>
+        </div>
+    </section>
+
+
+
 
 
     <script src="./js code/script.js"> </script>
