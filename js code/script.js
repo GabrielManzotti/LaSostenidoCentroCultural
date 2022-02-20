@@ -191,6 +191,9 @@ class CursoElegido {
     this.descuento = curso.descuento;
     this.totalNeto = curso.totalNeto;
     this.idCurso = curso.idCurso;
+    this.profesor = curso.profesor;
+    this.fecha = curso.fecha;
+    this.horario = curso.horario;
 
   }
 
@@ -335,67 +338,12 @@ continuarValidaDia.addEventListener("click", (e) => {
   }
 })
 
-// function precioHora() {
-//   nivel = prompt("Elegí tu nivel", "Inicial");
-//   console.log(nivel);
-//   switch (nivel) {
-//     case "Inicial":
-//       totalCurso = resultadoNivelInicial
-//       descuento = descuentoNivelInicial
-//       alert(`El valor del curso es de: $ ${resultadoNivelInicial},00`);
-//       console.log(`El valor de la hora es ${precioHoraNivelInicial}`);
-//       console.log(`El valor del curso es ${precioHoraNivelInicial*cantidadClasesNivelInicial}`);
-//       break;
-//     case "Intermedio":
-//       totalCurso = resultadoNivelIntermedio
-//       descuento = descuentoNivelIntermedio
-//       alert(`El valor del curso es de: ${resultadoNivelIntermedio,00}`);
-//       console.log(`El valor de la hora es ${precioHoraNivelIntermedio}`);
-//       console.log(`El valor del curso es ${precioHoraNivelIntermedio*cantidadClasesNivelIntermedio}`);
-//       break;
-//     case "Avanzado":
-//       totalCurso = resultadoNivelAvanzado
-//       descuento = descuentoNivelAvanzado
-//       alert(`El valor del curso es de: ${resultadoNivelAvanzado,00}`);
-//       console.log(`El valor de la hora es ${precioHoraNivelAvanzado}`);
-//       console.log(`El valor del curso es ${precioHoraNivelAvanzado*cantidadClasesNivelAvanzado}`);
-//       break;
-
-//   }
-// }
-
-
 
 
 let copiaArrayListadoCursosFiltrado = Object.assign([], arrayListadoCursosFiltrado); // deep copy - Copia profunda
 
 
-function ordenarPorDia() {
-  copiaArrayListadoCursosFiltrado.sort((a, b) => {
-    if (a.numeroDiaSemana < b.numeroDiaSemana) {
-      return -1;
-    }
-    if (a.numeroDiaSemana > b.numeroDiaSemana) {
-      return 1;
-    }
-  })
 
-
-
-  console.log("lo de abajo es el curso ordenado por día")
-  console.log(copiaArrayListadoCursosFiltrado)
-}
-
-ordenarPorDia()
-
-
-
-//elige día
-// function seleccionDia() {
-//   diaSemanal = prompt("Elegí el día de la semana que querés iniciar", "Lunes");
-//   console.log(diaSemanal);
-// }
-// seleccionDia();
 
 
 
@@ -426,30 +374,28 @@ buscarCursos.addEventListener("click", (e) => {
         sinDatosParaMostrarRojo.innerHTML = "No se encuentraron cursos. Por favor, seleccioná otro día.";
         sinDatosParaMostrarRojo.id = "sinDatosParaMostrarRojo";
         sinDatosParaMostrar.appendChild(sinDatosParaMostrarRojo);
- 
+
       } else {
-        
+
       }
 
 
     } else {
- 
+
       if (document.querySelector('#sinDatosParaMostrar').childElementCount >= 2) {
         //limpia error de no hay datos
         sinDatosParaMostrarRojo2 = document.querySelector("#sinDatosParaMostrarRojo");
         sinDatosParaMostrarRojo2.remove();
-      }
-      else {
-        
+      } else {
+
         muestraCursos();
-        
-   
-    
-      }
+
+
+
       }
     }
   }
-)
+})
 
 
 
@@ -460,22 +406,22 @@ buscarCursos.addEventListener("click", (e) => {
 
 
 
-const  muestraCursos = () => {
+const muestraCursos = () => {
   if ((document.getElementById('listado').childElementCount >= 1)) {
 
     let listado = document.getElementById('listado');
-    
+
     while (listado.firstChild) {
       listado.removeChild(listado.firstChild);
-  }
+    }
 
     for (const arrayListadoCursoFiltrado of arrayListadoCursosFiltrado) {
-    const listado = document.getElementById("listado");
-    let contenedor = document.createElement("li");
-    contenedor.className = "pruebaClassName";
-    contenedor.id = arrayListadoCursoFiltrado.idCurso;
-    contenedor.innerHTML =
-      ` <div class="contenedorPorListado" id=${arrayListadoCursoFiltrado.idCurso}>
+      const listado = document.getElementById("listado");
+      let contenedor = document.createElement("li");
+      contenedor.className = "pruebaClassName";
+      contenedor.id = arrayListadoCursoFiltrado.idCurso;
+      contenedor.innerHTML =
+        ` <div class="contenedorPorListado" id=${arrayListadoCursoFiltrado.idCurso}>
       <div class= contenedorNivel>  
           <p class="tituloListado">Día</p>
           <p>${arrayListadoCursoFiltrado.diaSemana}</p>
@@ -504,26 +450,28 @@ const  muestraCursos = () => {
       <p class="tituloListado">Valor</p>
       <p>${arrayListadoCursoFiltrado.valorBruto}</p>
       </div>
-      <div class="botonContinuar" id="seleccionaCurso${arrayListadoCursoFiltrado.idCurso}">
+      <div class="botonContinuar" id="seleccionaCurso">
         <a type="button" id="botonSeleccionaElCurso${arrayListadoCursoFiltrado.idCurso}" 
-        class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
+        href="#seccionCarritoCursoElegido" class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
       </div>
     </div>`;
-  
-  
 
-    listado.appendChild(contenedor);
 
-}}
-else {
-  
-  for (const arrayListadoCursoFiltrado of arrayListadoCursosFiltrado) {
-    const listado = document.getElementById("listado");
-    let contenedor = document.createElement("li");
-    contenedor.className = "pruebaClassName";
-    contenedor.id = arrayListadoCursoFiltrado.idCurso;
-    contenedor.innerHTML =
-      ` <div class="contenedorPorListado" id=${arrayListadoCursoFiltrado.idCurso}>
+
+      contenedor.onclick = () => eligeCurso(arrayListadoCursoFiltrado)
+
+      listado.appendChild(contenedor);
+
+    }
+  } else {
+
+    for (const arrayListadoCursoFiltrado of arrayListadoCursosFiltrado) {
+      const listado = document.getElementById("listado");
+      let contenedor = document.createElement("li");
+      contenedor.className = "pruebaClassName";
+      contenedor.id = arrayListadoCursoFiltrado.idCurso;
+      contenedor.innerHTML =
+        ` <div class="contenedorPorListado" id=${arrayListadoCursoFiltrado.idCurso}>
       <div class= contenedorNivel>  
           <p class="tituloListado">Día</p>
           <p>${arrayListadoCursoFiltrado.diaSemana}</p>
@@ -554,33 +502,57 @@ else {
       </div>
       <div class="botonContinuar" id="seleccionaCurso${arrayListadoCursoFiltrado.idCurso}">
         <a type="button" id="botonSeleccionaElCurso${arrayListadoCursoFiltrado.idCurso}"
-        class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
+        href="#seccionCarritoCursoElegido"  class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
       </div>
     </div>`;
 
+
+      contenedor.onclick = () => eligeCurso(arrayListadoCursoFiltrado)
+
+
+
+      listado.appendChild(contenedor);
+    }
+
+
+
+  }
+}
+
+
+const eligeCurso = (arrayListadoCursoFiltrado) => {
+  //grabo datos del curso elegido en el array datosCurso, lo hago string y guardo en local storage
+  datosCurso.totalCurso = arrayListadoCursoFiltrado.valorBruto
+  datosCurso.descuento = 0.80
+  datosCurso.totalNeto = (+arrayListadoCursoFiltrado.valorBruto * +datosCurso.descuento)
+  datosCurso.total = arrayListadoCursoFiltrado.cantHoras
+  datosCurso.profesor = arrayListadoCursoFiltrado.profesor
+  datosCurso.idCurso = arrayListadoCursoFiltrado.idCurso
+  datosCurso.fecha = `${arrayListadoCursoFiltrado.fechaInicio} hasta ${arrayListadoCursoFiltrado.fechaFin} `
+  datosCurso.horario = arrayListadoCursoFiltrado.horario
+
+  console.log(datosCurso)
+  localStorage.setItem("Curso elegido", JSON.stringify(datosCurso));
+
+  muestraSeleccionCurso()
+
+
+}
+
+
+const muestraSeleccionCurso = () => {
+  const cursoElegidoFinal = document.getElementById("seccionCarritoCursoElegido")
+  let cursoElegidoFinalEscribe = document.createElement("div")
+  cursoElegidoFinalEscribe.className = "pruebaClassName";
+  cursoElegidoFinalEscribe.id = "contenedorPrincipalCursoElegido";
+  cursoElegidoFinalEscribe.innerHTML = `
    
-    listado.appendChild(contenedor);}
+      <div class= contenedorNivel>  
+          <p class="tituloListado">Profesor</p>
+          <p>${datosCurso.profesor}</p>
+      </div>
+      
+  `
 
-
-
-}}
-
-
-
-
-
-
-
-//add even listener del boton creado dinamicamente
-document.body.addEventListener( 'click', function ( event ) {
-  if( event.target.id == 'botonSeleccionaElCurso1' ) {
-    console.log("curso1") 
-    datosCurso.totalCurso = precioHoraNivelInicial
-    console.log(datosCurso)
-    
-  };
-  if( event.target.id == 'botonSeleccionaElCurso2' ) {
-    console.log("curso2") 
-  };
-} );
-
+  cursoElegidoFinal.appendChild(cursoElegidoFinalEscribe);
+}
