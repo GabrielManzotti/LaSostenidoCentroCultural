@@ -433,62 +433,154 @@ buscarCursos.addEventListener("click", (e) => {
 
 
     } else {
-      console.log("entra en else")
+ 
       if (document.querySelector('#sinDatosParaMostrar').childElementCount >= 2) {
         //limpia error de no hay datos
         sinDatosParaMostrarRojo2 = document.querySelector("#sinDatosParaMostrarRojo");
         sinDatosParaMostrarRojo2.remove();
       }
       else {
-
-      for (const arrayListadoCursoFiltrado of arrayListadoCursosFiltrado) {
-        const listado = document.getElementById("listado");
-        let contenedor = document.createElement("li");
-        contenedor.className = "pruebaClassName";
-        contenedor.id = arrayListadoCursoFiltrado.idCurso;
-        contenedor.innerHTML =
-          ` <div class="contenedorPorListado">
-          <div class= contenedorNivel>  
-              <p class="tituloListado">Día</p>
-              <p>${arrayListadoCursoFiltrado.diaSemana}</p>
-          </div>
-          <div class= contenedorNivel>  
-              <p class="tituloListado">Horario</p>
-              <p>${arrayListadoCursoFiltrado.horario}</p>
-          </div>
-          <div class="contenedorNivel">
-              <p class="tituloListado">Fecha</p>
-              <p><strong>${arrayListadoCursoFiltrado.fechaInicio}</strong> hasta <strong>${arrayListadoCursoFiltrado.fechaFin}</strong></p>
-          </div>
-          <div class= contenedorNivel>  
-              <p class="tituloListado">Nivel</p>
-              <p>${arrayListadoCursoFiltrado.nivel}</p>
-          </div>
-          <div class= contenedorNivel>  
-              <p class="tituloListado">Hs. totales</p>
-              <p>${arrayListadoCursoFiltrado.cantHoras}</p>
-          </div>
-          <div class= contenedorNivel>  
-          <p class="tituloListado">Profesor@</p>
-          <p>${arrayListadoCursoFiltrado.profesor}</p>
-      </div>
-          <div class= contenedorNivel>  
-          <p class="tituloListado">Valor</p>
-          <p>${arrayListadoCursoFiltrado.valorBruto}</p>
-          </div>
-          <div class="botonContinuar">
-            <a type="button" href="#listadoDeCursos"
-            class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
-          </div>
-        </div>`;
-
-
-        listado.appendChild(contenedor);
+        
+        muestraCursos();
+        
+   
+    
       }
       }
     }
   }
-})
+)
 
 
+
+
+
+
+
+
+
+
+const  muestraCursos = () => {
+  if ((document.getElementById('listado').childElementCount >= 1)) {
+
+    let listado = document.getElementById('listado');
+    
+    while (listado.firstChild) {
+      listado.removeChild(listado.firstChild);
+  }
+
+    for (const arrayListadoCursoFiltrado of arrayListadoCursosFiltrado) {
+    const listado = document.getElementById("listado");
+    let contenedor = document.createElement("li");
+    contenedor.className = "pruebaClassName";
+    contenedor.id = arrayListadoCursoFiltrado.idCurso;
+    contenedor.innerHTML =
+      ` <div class="contenedorPorListado" id=${arrayListadoCursoFiltrado.idCurso}>
+      <div class= contenedorNivel>  
+          <p class="tituloListado">Día</p>
+          <p>${arrayListadoCursoFiltrado.diaSemana}</p>
+      </div>
+      <div class= contenedorNivel>  
+          <p class="tituloListado">Horario</p>
+          <p>${arrayListadoCursoFiltrado.horario}</p>
+      </div>
+      <div class="contenedorNivel">
+          <p class="tituloListado">Fecha</p>
+          <p><strong>${arrayListadoCursoFiltrado.fechaInicio}</strong> hasta <strong>${arrayListadoCursoFiltrado.fechaFin}</strong></p>
+      </div>
+      <div class= contenedorNivel>  
+          <p class="tituloListado">Nivel</p>
+          <p>${arrayListadoCursoFiltrado.nivel}</p>
+      </div>
+      <div class= contenedorNivel>  
+          <p class="tituloListado">Hs. totales</p>
+          <p>${arrayListadoCursoFiltrado.cantHoras}</p>
+      </div>
+      <div class= contenedorNivel>  
+      <p class="tituloListado">Profesor@</p>
+      <p>${arrayListadoCursoFiltrado.profesor}</p>
+  </div>
+      <div class= contenedorNivel>  
+      <p class="tituloListado">Valor</p>
+      <p>${arrayListadoCursoFiltrado.valorBruto}</p>
+      </div>
+      <div class="botonContinuar" id="seleccionaCurso${arrayListadoCursoFiltrado.idCurso}">
+        <a type="button" id="botonSeleccionaElCurso${arrayListadoCursoFiltrado.idCurso}" 
+        class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
+      </div>
+    </div>`;
+  
+  
+
+    listado.appendChild(contenedor);
+
+}}
+else {
+  
+  for (const arrayListadoCursoFiltrado of arrayListadoCursosFiltrado) {
+    const listado = document.getElementById("listado");
+    let contenedor = document.createElement("li");
+    contenedor.className = "pruebaClassName";
+    contenedor.id = arrayListadoCursoFiltrado.idCurso;
+    contenedor.innerHTML =
+      ` <div class="contenedorPorListado" id=${arrayListadoCursoFiltrado.idCurso}>
+      <div class= contenedorNivel>  
+          <p class="tituloListado">Día</p>
+          <p>${arrayListadoCursoFiltrado.diaSemana}</p>
+      </div>
+      <div class= contenedorNivel>  
+          <p class="tituloListado">Horario</p>
+          <p>${arrayListadoCursoFiltrado.horario}</p>
+      </div>
+      <div class="contenedorNivel">
+          <p class="tituloListado">Fecha</p>
+          <p><strong>${arrayListadoCursoFiltrado.fechaInicio}</strong> hasta <strong>${arrayListadoCursoFiltrado.fechaFin}</strong></p>
+      </div>
+      <div class= contenedorNivel>  
+          <p class="tituloListado">Nivel</p>
+          <p>${arrayListadoCursoFiltrado.nivel}</p>
+      </div>
+      <div class= contenedorNivel>  
+          <p class="tituloListado">Hs. totales</p>
+          <p>${arrayListadoCursoFiltrado.cantHoras}</p>
+      </div>
+      <div class= contenedorNivel>  
+      <p class="tituloListado">Profesor@</p>
+      <p>${arrayListadoCursoFiltrado.profesor}</p>
+  </div>
+      <div class= contenedorNivel>  
+      <p class="tituloListado">Valor</p>
+      <p>${arrayListadoCursoFiltrado.valorBruto}</p>
+      </div>
+      <div class="botonContinuar" id="seleccionaCurso${arrayListadoCursoFiltrado.idCurso}">
+        <a type="button" id="botonSeleccionaElCurso${arrayListadoCursoFiltrado.idCurso}"
+        class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
+      </div>
+    </div>`;
+
+   
+    listado.appendChild(contenedor);}
+
+
+
+}}
+
+
+
+
+
+
+
+//add even listener del boton creado dinamicamente
+document.body.addEventListener( 'click', function ( event ) {
+  if( event.target.id == 'botonSeleccionaElCurso1' ) {
+    console.log("curso1") 
+    datosCurso.totalCurso = precioHoraNivelInicial
+    console.log(datosCurso)
+    
+  };
+  if( event.target.id == 'botonSeleccionaElCurso2' ) {
+    console.log("curso2") 
+  };
+} );
 
