@@ -338,18 +338,83 @@ li.liListados {
 
 
 .espacioDeListado{
-    height: 400px;
+    height: 150px;
 }
 
 
 .seccionCarritoCursoElegido {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     align-content: center;
     border-bottom: solid 1.5px black;
     width: 100%;
     margin-top: 20px;
+    height: 300px;
+}
+
+.reservaCursoElegido {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+
+}
+
+.tituloSubrayadoListadoCursosReserva {
+    width: 250px;
+    border-bottom: solid 3px black;
+
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.buttonRadiousAndMoreEditaReserva {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 50px;
+    width: 200px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14.4px;
+    background-color: black;
+    opacity: 0.90;
+    color: white;
+    font-weight: 700;
+    border: 2px solid white;
+    margin-left: 25px;   
+    margin-top: 20px;
+}
+
+.tituloSubrayadoListadoCursosRFormulario {
+    width: 250px;
+    border-bottom: solid 3px black;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 30px;
+}
+
+.seccionTituloFormulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
     height: 100px;
+    margin-top: 30px;
 }

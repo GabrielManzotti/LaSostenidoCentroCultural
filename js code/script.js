@@ -452,7 +452,7 @@ const muestraCursos = () => {
       </div>
       <div class="botonContinuar" id="seleccionaCurso">
         <a type="button" id="botonSeleccionaElCurso${arrayListadoCursoFiltrado.idCurso}" 
-        href="#seccionCarritoCursoElegido" class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
+        href="./Paginas/reserva.html" class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
       </div>
     </div>`;
 
@@ -502,7 +502,7 @@ const muestraCursos = () => {
       </div>
       <div class="botonContinuar" id="seleccionaCurso${arrayListadoCursoFiltrado.idCurso}">
         <a type="button" id="botonSeleccionaElCurso${arrayListadoCursoFiltrado.idCurso}"
-        href="#seccionCarritoCursoElegido"  class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
+        href="./Paginas/reserva.html"  class="btn btn-dark  buttonRadiousAndMoreListado">Seleccionar curso</a>
       </div>
     </div>`;
 
@@ -534,25 +534,8 @@ const eligeCurso = (arrayListadoCursoFiltrado) => {
   console.log(datosCurso)
   localStorage.setItem("Curso elegido", JSON.stringify(datosCurso));
 
-  muestraSeleccionCurso()
+ 
 
 
 }
 
-
-const muestraSeleccionCurso = () => {
-  const cursoElegidoFinal = document.getElementById("seccionCarritoCursoElegido")
-  let cursoElegidoFinalEscribe = document.createElement("div")
-  cursoElegidoFinalEscribe.className = "pruebaClassName";
-  cursoElegidoFinalEscribe.id = "contenedorPrincipalCursoElegido";
-  cursoElegidoFinalEscribe.innerHTML = `
-   
-      <div class= contenedorNivel>  
-          <p class="tituloListado">Profesor</p>
-          <p>${datosCurso.profesor}</p>
-      </div>
-      
-  `
-
-  cursoElegidoFinal.appendChild(cursoElegidoFinalEscribe);
-}
