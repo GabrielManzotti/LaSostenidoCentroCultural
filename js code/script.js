@@ -196,28 +196,9 @@ class CursoElegido {
     this.horario = curso.horario;
 
   }
-
-  // aplicaDescuento() {
-  //   if (nivel = "Inicial") {
-  //     this.totalNeto = this.totalCurso * this.descuento
-  //     console.log(`Aplica descuento de ${descuentoNivelInicial}. El total neto es de: ${this.totalNeto}`)
-  //     console.log(this.totalNeto)
-  //   } else if (nivel = "Intermedio") {
-  //     this.totalNeto = this.totalCurso * this.descuento
-  //     console.log(`Aplica descuento de ${descuentoNivelIntermedio}. El total neto es de: ${this.totalNeto}`)
-  //     console.log(this.totalNeto)
-  //   } else if (nivel = "Avanzado") {
-  //     this.totalNeto = this.totalCurso * this.descuento
-  //     console.log(`Aplica descuento de ${descuentoNivelAvanzado}. El total neto es de: ${this.totalNeto}`)
-  //     console.log(this.totalNeto)
-  //   }
-
-  // }
 }
 
-const datosCurso = new CursoElegido({
-
-});
+const datosCurso = new CursoElegido({});
 
 
 // datosCurso.aplicaDescuento();

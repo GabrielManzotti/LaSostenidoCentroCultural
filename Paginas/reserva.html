@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
 
     <!-- Css boostrap -->
@@ -75,11 +75,232 @@
 
     <section id="seccionTituloFormulario" class="seccionTituloFormulario">
         <div class="tituloSubrayadoListadoCursosRFormulario">
-            <h2 class="tituloContainerDesplegable">Formulario</h2>
+            <h2 class="tituloContainerDesplegable">Elegí el plan</h2>
+        </div>
+    </section>
+    <section id="seccionContenedoresPlan" class="seccionContenedoresPlan">
+        <div id="contenedorPrincipalElegiCurso" class="contenedorPrincipalElegiCurso">
+
+            <div id="contenedorPlanBeca" class="contenedorPlanBeca">
+
+                <div class="subContenedor">
+                    <div class="contenedorIzquierda">
+                        <div class="requisitosYVasATener">
+                            <h5>Requisitos</h5>
+                            <ul>
+                                <li>85% de asistencia a clases</li>
+                                <li>Entregar trabajos prácticos en tiempo y forma</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="contenedorDerecha">
+                        <div class="requisitosYVasATener">
+                            <h5>Vas a tener</h5>
+                            <ul>
+                                <li>Clases online en vivo</li>
+                                <li>Repositorio con clases grabadas</li>
+                                <li>Acceso a bolsa laboral</li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="botonEligePrecio">
+                    <a type="button" id="botonPlanBeca" href="#seccionCompletaFormulario"
+                        class="btn btn-dark  buttonRadiousAndMoreElegir">Elegir</a>
+                </div>
+            </div>
+
+
+            <div id="contenedorPlanSinBeca" class="contenedorPlanSinBeca">
+                <div class="subContenedor">
+                    <div class="contenedorIzquierda">
+                        <div class="requisitosYVasATener">
+                            <h5>Requisitos</h5>
+                            <ul>
+                                <li>Clases online en vivo</li>
+                                <li>Repositorio con clases grabadas</li>
+                                <li>Acceso a bolsa laboral</li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="contenedorDerecha">
+                        <div class="requisitosYVasATener">
+                            <h5>Requisitos</h5>
+                            <ul>
+                                <li>Requisito 1</li>
+                                <li>Requisito 2</li>
+                                <li>Requisito 3</li>
+                                <li>Requisito 4</li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="botonEligePrecio">
+                    <a type="button" id="botonPlanSinBeca" href="#formulario"
+                        class="btn btn-dark buttonRadiousAndMoreElegir">Elegir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="seccionCompletaFormulario" class="seccionCompletaFormulario">
+        <div class="tituloSubrayadoListadoCursosFormulario">
+            <h2 class="tituloContainerDesplegable">Completá el formulario</h2>
+        </div>
+    </section>
+
+    <section id="formulario" class="seccionFormulario">
+        <div class="contenedorPrincipalFormulario">
+            <form id="formulario" class="formularioReserva">
+
+                <div class="contenedorFormularioIzquierda">
+                    <div class="mb-3 nombreYApellido">
+
+                        <div class="divnombreApellidoEdad">
+                            <input type="text" id="nombre" class="form-control nombre" oninput="validar(this)"
+                                placeholder="Nombres" aria-label="Nombre">
+
+                            <input type="text" id="apellido" class="form-control apellido" oninput="validar(this)"
+                                placeholder="Apellido" aria-label="Apellido">
+
+                            <input type="number" id="edad" class="form-control edad" min="1" pattern="^[0-9]+"
+                                placeholder="Edad" aria-label="Apellido">
+
+                        </div>
+
+                        <div class="emailYConfirmacion">
+                            <input type="text" id="email" class="form-control email" placeholder="Email"
+                                aria-label="Email" aria-describedby="basic-addon2">
+                            <input type="text" id="emailConfirma" class="form-control emailConfirma"
+                                placeholder="Confirmá tu email" aria-label="emailConfirma"
+                                aria-describedby="basic-addon2">
+                        </div>
+                        <div class="divDNIyLocalidad">
+                            <input type="text" id="dni" class="form-control dni" placeholder="DNI" aria-label="Email"
+                                aria-describedby="basic-addon2">
+                            <input type="text" id="localidad" class="form-control localidad" placeholder="Localidad"
+                                aria-label="Localidad" aria-describedby="basic-addon2">
+                        </div>
+                        <div class="divDomicilio">
+                            <input type="text" id="calle" class="form-control calle" placeholder="Calle"
+                                aria-label="Email" aria-describedby="basic-addon2">
+                            <input type="number" id="altura" min="1" pattern="^[0-9]+" class="form-control altura"
+                                placeholder="Altura" aria-label="Email" aria-describedby="basic-addon2">
+                            <input type="text" id="departamento" class="form-control depto" placeholder="Depto."
+                                aria-label="Email" aria-describedby="basic-addon2">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="enviaFormulario">
+                    <input type="submit" value="Continuar" id="enviaFormulario" href=""
+                        class="btn btn-dark  buttonRadiousAndMoreElegir">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="tarjetaDeCredito">
+        <div class="contenedor">
+
+            <!-- Tarjeta -->
+            <section class="tarjeta" id="tarjeta">
+                <div class="delantera">
+                    <div class="logo-marca" id="logo-marca">
+                        <!-- <img src="img/logos/visa.png" alt=""> -->
+                    </div>
+                    <img src="img/chip-tarjeta.png" class="chip" alt="">
+                    <div class="datos">
+                        <div class="grupo" id="numero">
+                            <p class="label">Número Tarjeta</p>
+                            <p class="numero">#### #### #### ####</p>
+                        </div>
+                        <div class="flexbox">
+                            <div class="grupo" id="nombre">
+                                <p class="label">Nombre Tarjeta</p>
+                                <p class="nombre">Jhon Doe</p>
+                            </div>
+    
+                            <div class="grupo" id="expiracion">
+                                <p class="label">Expiracion</p>
+                                <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="trasera">
+                    <div class="barra-magnetica"></div>
+                    <div class="datos">
+                        <div class="grupo" id="firma">
+                            <p class="label">Firma</p>
+                            <div class="firma"><p></p></div>
+                        </div>
+                        <div class="grupo" id="ccv">
+                            <p class="label">CCV</p>
+                            <p class="ccv"></p>
+                        </div>
+                    </div>
+                    <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+                    <a href="#" class="link-banco">www.tubanco.com</a>
+                </div>
+            </section>
+    
+            <!-- Contenedor Boton Abrir Formulario -->
+            <div class="contenedor-btn">
+                <button class="btn-abrir-formulario" id="btn-abrir-formulario">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+    
+            <!-- Formulario -->
+            <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+                <div class="grupo">
+                    <label for="inputNumero">Número Tarjeta</label>
+                    <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+                </div>
+                <div class="grupo">
+                    <label for="inputNombre">Nombre</label>
+                    <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+                </div>
+                <div class="flexbox">
+                    <div class="grupo expira">
+                        <label for="selectMes">Expiracion</label>
+                        <div class="flexbox">
+                            <div class="grupo-select">
+                                <select name="mes" id="selectMes">
+                                    <option disabled selected>Mes</option>
+                                </select>
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                            <div class="grupo-select">
+                                <select name="year" id="selectYear">
+                                    <option disabled selected>Año</option>
+                                </select>
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="grupo ccv">
+                        <label for="inputCCV">CCV</label>
+                        <input type="text" id="inputCCV" maxlength="3">
+                    </div>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
         </div>
     </section>
 
 
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <script src="../js code/reserva.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
