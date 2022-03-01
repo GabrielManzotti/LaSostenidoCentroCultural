@@ -120,10 +120,7 @@
                         <div class="requisitosYVasATener">
                             <h5>Requisitos</h5>
                             <ul>
-                                <li>Clases online en vivo</li>
-                                <li>Repositorio con clases grabadas</li>
-                                <li>Acceso a bolsa laboral</li>
-
+                                <li>75% de asistencia a clases</li>
                             </ul>
 
                         </div>
@@ -132,10 +129,9 @@
                         <div class="requisitosYVasATener">
                             <h5>Requisitos</h5>
                             <ul>
-                                <li>Requisito 1</li>
-                                <li>Requisito 2</li>
-                                <li>Requisito 3</li>
-                                <li>Requisito 4</li>
+                                <li>Clases online en vivo</li>
+                                <li>Repositorio con clases grabadas</li>
+                                <li>Acceso a bolsa laboral</li>
                             </ul>
 
                         </div>
@@ -163,7 +159,7 @@
                     <div class="mb-3 nombreYApellido">
 
                         <div class="divnombreApellidoEdad">
-                            <input type="text" id="nombre" class="form-control nombre" oninput="validar(this)"
+                            <input type="text" id="nombre" class="form-control nombres" oninput="validar(this)"
                                 placeholder="Nombres" aria-label="Nombre">
 
                             <input type="text" id="apellido" class="form-control apellido" oninput="validar(this)"
@@ -200,14 +196,21 @@
 
                 </div>
                 <div class="enviaFormulario">
-                    <input type="submit" value="Continuar" id="enviaFormulario" href=""
+                    <input type="submit" value="Continuar" id="enviaFormulario" href="#pagoDeTarjeta"
                         class="btn btn-dark  buttonRadiousAndMoreElegir">
                 </div>
             </form>
         </div>
     </section>
 
-    <section class="tarjetaDeCredito">
+    <!--Seccion tarjeta de crédito-->
+    <section id="seccionCompletaFormularioPago" class="seccionCompletaFormulario">
+        <div class="tituloSubrayadoListadoCursosFormulario">
+            <h2 class="tituloContainerDesplegable">Realizá el pago</h2>
+        </div>
+    </section>
+
+    <section id="pagoDeTarjeta" class="tarjetaDeCredito">
         <div class="contenedor">
 
             <!-- Tarjeta -->
@@ -216,7 +219,7 @@
                     <div class="logo-marca" id="logo-marca">
                         <!-- <img src="img/logos/visa.png" alt=""> -->
                     </div>
-                    <img src="img/chip-tarjeta.png" class="chip" alt="">
+                    <img src="../Imagenes/img/chip-tarjeta.png" class="chip" alt="">
                     <div class="datos">
                         <div class="grupo" id="numero">
                             <p class="label">Número Tarjeta</p>
@@ -227,7 +230,7 @@
                                 <p class="label">Nombre Tarjeta</p>
                                 <p class="nombre">Jhon Doe</p>
                             </div>
-    
+
                             <div class="grupo" id="expiracion">
                                 <p class="label">Expiracion</p>
                                 <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
@@ -235,31 +238,34 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="trasera">
                     <div class="barra-magnetica"></div>
                     <div class="datos">
                         <div class="grupo" id="firma">
                             <p class="label">Firma</p>
-                            <div class="firma"><p></p></div>
+                            <div class="firma">
+                                <p></p>
+                            </div>
                         </div>
                         <div class="grupo" id="ccv">
                             <p class="label">CCV</p>
                             <p class="ccv"></p>
                         </div>
                     </div>
-                    <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
-                    <a href="#" class="link-banco">www.tubanco.com</a>
+                    <p class="leyenda">Revisá el código de seguridad de tu tarjeta y no lo reveles. Ante la duda
+                        contactate con tu banco.</p>
+                    <a href="#" class="link-banco">www.lasostenido.com.ar</a>
                 </div>
             </section>
-    
+
             <!-- Contenedor Boton Abrir Formulario -->
             <div class="contenedor-btn">
                 <button class="btn-abrir-formulario" id="btn-abrir-formulario">
                     <i class="fas fa-plus"></i>
                 </button>
             </div>
-    
+
             <!-- Formulario -->
             <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
                 <div class="grupo">
@@ -288,13 +294,13 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="grupo ccv">
                         <label for="inputCCV">CCV</label>
                         <input type="text" id="inputCCV" maxlength="3">
                     </div>
                 </div>
-                <button type="submit" class="btn-enviar">Enviar</button>
+                <button type="submit" id="enviarPago" class="btn-enviar">Enviar</button>
             </form>
         </div>
     </section>
