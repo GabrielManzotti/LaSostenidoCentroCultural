@@ -306,6 +306,8 @@ formulario.inputCCV.addEventListener('keyup', () => {
 	ccv.textContent = formulario.inputCCV.value;
 });
 
+// -------boton enviar------------
+
 const enviarPago = document.getElementById("enviarPago")
 
 enviarPago.addEventListener("click", (e) => {
