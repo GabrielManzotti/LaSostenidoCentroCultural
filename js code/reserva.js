@@ -139,7 +139,7 @@ const validar = function (campo) {
 
 
 formulario1.addEventListener("submit", (e) => {
-   
+    e.preventDefault();
 
     validarEmail();
 
@@ -311,9 +311,11 @@ formulario.inputCCV.addEventListener('keyup', () => {
 const enviarPago = document.getElementById("enviarPago")
 
 enviarPago.addEventListener("click", (e) => {
-    e.preventDefault();
+    
     datosFormularioTarjeta.nombreTarjeta = nombreTC.value;
     datosFormularioTarjeta.numeroTarjeta = numeroTC.value;
+    localStorage.setItem("Datos de Pago", JSON.stringify(datosFormularioTarjeta));
+
     console.log(datosFormularioTarjeta)
    
 })
