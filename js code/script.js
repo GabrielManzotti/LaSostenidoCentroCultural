@@ -321,70 +321,7 @@ continuarValidaDia.addEventListener("click", (e) => {
 
 
 
-let copiaArrayListadoCursosFiltrado = Object.assign([], arrayListadoCursosFiltrado); // deep copy - Copia profunda
-
-
-
-
-
-
-const buscarCursos = document.querySelector("#buscarCursos");
-
-
-buscarCursos.addEventListener("click", (e) => {
-
-  const sinDatosParaMostrar = document.querySelector("#sinDatosParaMostrar");
-  const sinDatosParaMostrarRojo = document.createElement("p");
-
-  if ((datosCurso.nivel === "Seleccioná tu nivel") || (datosCurso.nivel == "") || (nivelSeleccionado == "") || (datosCurso.diaSemanal === "Seleccioná el día") || (datosCurso.diaSemanal == "") || (diaSeleccionado == "")) {
-
-    sinDatosParaMostrarRojo.className = "textoError";
-    sinDatosParaMostrarRojo.innerHTML = "Por favor, completar día y/o nivel en los anteriores pasos";
-    sinDatosParaMostrar.appendChild(sinDatosParaMostrarRojo);
-  } else {
-
-
-    if (arrayListadoCursosFiltrado.length === 0) {
-      // sin datos para mostrar en el filtro
-
-      if (document.querySelector('#sinDatosParaMostrar').childElementCount <= 1) {
-        const sinDatosParaMostrar = document.querySelector("#sinDatosParaMostrar");
-        const sinDatosParaMostrarRojo = document.createElement("p");
-
-        sinDatosParaMostrarRojo.className = "textoError";
-        sinDatosParaMostrarRojo.innerHTML = "No se encuentraron cursos. Por favor, seleccioná otro día.";
-        sinDatosParaMostrarRojo.id = "sinDatosParaMostrarRojo";
-        sinDatosParaMostrar.appendChild(sinDatosParaMostrarRojo);
-
-      } else {
-
-      }
-
-
-    } else {
-
-      if (document.querySelector('#sinDatosParaMostrar').childElementCount >= 2) {
-        //limpia error de no hay datos
-        sinDatosParaMostrarRojo2 = document.querySelector("#sinDatosParaMostrarRojo");
-        sinDatosParaMostrarRojo2.remove();
-      } else {
-
-        muestraCursos();
-
-
-
-      }
-    }
-  }
-})
-
-
-
-
-
-
-
-
+let copiaArrayListadoCursosFiltrado = Object.assign([], arrayListadoCursosFiltrado); // deep copy 
 
 
 const muestraCursos = () => {
@@ -501,21 +438,99 @@ const muestraCursos = () => {
 }
 
 
-const eligeCurso = (arrayListadoCursoFiltrado) => {
-  //grabo datos del curso elegido en el array datosCurso, lo hago string y guardo en local storage
-  datosCurso.totalCurso = arrayListadoCursoFiltrado.valorBruto
-  datosCurso.descuento = 0.80
-  datosCurso.totalNeto = (+arrayListadoCursoFiltrado.valorBruto * +datosCurso.descuento)
-  datosCurso.total = arrayListadoCursoFiltrado.cantHoras
-  datosCurso.profesor = arrayListadoCursoFiltrado.profesor
-  datosCurso.idCurso = arrayListadoCursoFiltrado.idCurso
-  datosCurso.fecha = `${arrayListadoCursoFiltrado.fechaInicio} hasta ${arrayListadoCursoFiltrado.fechaFin} `
-  datosCurso.horario = arrayListadoCursoFiltrado.horario
 
-  console.log(datosCurso)
+const buscarCursos = document.querySelector("#buscarCursos");
+
+
+buscarCursos.addEventListener("click", (e) => {
+  return new Promise((resolve, reject) => {
+    // SIMULANDO
+    sinDatosParaMostrar.innerHTML = "Cargando...";
+    setTimeout(() => {
+      // Petición de BE determina si es TRUE O FALSE
+      const res = true;
+      if (res) {
+        resolve(arrayListadoCursosFiltrado);
+      } else {
+        reject("Ha ocurrido un error");
+      }
+    }, 2000)
+  })
+
+
+
+  .then(respuesta => {
+    const sinDatosParaMostrar = document.querySelector("#sinDatosParaMostrar");
+    const sinDatosParaMostrarRojo = document.createElement("p");
+    sinDatosParaMostrar.innerHTML = "";
+  
+    if ((datosCurso.nivel === "Seleccioná tu nivel") || (datosCurso.nivel == "") || (nivelSeleccionado == "") || (datosCurso.diaSemanal === "Seleccioná el día") || (datosCurso.diaSemanal == "") || (diaSeleccionado == "")) {
+  
+      sinDatosParaMostrarRojo.className = "textoError";
+      sinDatosParaMostrarRojo.innerHTML = "Por favor, completar día y/o nivel en los anteriores pasos";
+      sinDatosParaMostrar.appendChild(sinDatosParaMostrarRojo);
+    } else {
+      if (arrayListadoCursosFiltrado.length === 0) {
+        // sin datos para mostrar en el filtro
+  
+        if (document.querySelector('#sinDatosParaMostrar').childElementCount <= 1) {
+          const sinDatosParaMostrar = document.querySelector("#sinDatosParaMostrar");
+          const sinDatosParaMostrarRojo = document.createElement("p");
+          sinDatosParaMostrarRojo.className = "textoError";
+          sinDatosParaMostrarRojo.innerHTML = "No se encuentraron cursos. Por favor, seleccioná otro día.";
+          sinDatosParaMostrarRojo.id = "sinDatosParaMostrarRojo";
+          sinDatosParaMostrar.appendChild(sinDatosParaMostrarRojo);
+        } else {
+        }
+        } else {
+        if (document.querySelector('#sinDatosParaMostrar').childElementCount >= 2) {
+          //limpia error de no hay datos
+          sinDatosParaMostrarRojo2 = document.querySelector("#sinDatosParaMostrarRojo");
+          sinDatosParaMostrarRojo2.remove();
+        } else {
+          muestraCursos();
+          }
+      }
+    }
+  })
+  
+  
+  .catch(error => {
+    sinDatosParaMostrar.innerHTML = error;
+  })
+  .finally(() => {
+    //Por ahora no cargo finally
+  });
+})
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+function eligeCurso(arrayListadoCursoFiltrado) {
+  //grabo datos del curso elegido en el array datosCurso, lo hago string y guardo en local storage
+  datosCurso.totalCurso = arrayListadoCursoFiltrado.valorBruto;
+  datosCurso.descuento = 0.80;
+  datosCurso.totalNeto = (+arrayListadoCursoFiltrado.valorBruto * +datosCurso.descuento);
+  datosCurso.total = arrayListadoCursoFiltrado.cantHoras;
+  datosCurso.profesor = arrayListadoCursoFiltrado.profesor;
+  datosCurso.idCurso = arrayListadoCursoFiltrado.idCurso;
+  datosCurso.fecha = `${arrayListadoCursoFiltrado.fechaInicio} hasta ${arrayListadoCursoFiltrado.fechaFin} `;
+  datosCurso.horario = arrayListadoCursoFiltrado.horario;
+
+  console.log(datosCurso);
   localStorage.setItem("Curso elegido", JSON.stringify(datosCurso));
 
- 
+
 
 
 }
