@@ -42,26 +42,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="../index.html"><img src="../Logo/Logo prueba3.png" alt="Logo header"
                         class="img-fluid marginLogo" width="300px" height="300px"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto pe-5 mb-2 mb-lg-0 marginRigthHeader">
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./Pages/trabajos.html">Reservas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./Pages/contacto.html">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./Pages/contacto.html">Contacto</a>
-                        </li>
-                    </ul>
-
-                </div>
+               
             </div>
         </nav>
     </header>
@@ -74,14 +55,25 @@
     <section id="seccionContenedorTicket" class="seccionContenedorTicket">
         <div id="contenedorTicket" class="contenedorTicket">
            
-           <div class="imagenTitulo">
+           <div class="imagenTitulo" id="imagenTitulo">
                <img class="logoTicket" src="../Logo/Logo Ticket.png" alt="">
            </div>
 
             
         </div>
-    </section>
 
+        <a type="button" id="testButton" 
+        class="btn btn-dark  buttonRadiousAndMoreDescargar">Descargar</a>
+    
+    
+
+
+     
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" 
+        integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+        crossorigin="anonymous"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+     
 
     <script src="../js code/ticket.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

@@ -1,0 +1,153 @@
+[   {
+        "nivel": "Inicial",
+        "horario": "19:00 a 21:00",
+        "profesor": "Lautaro Aguilar",
+        "numeroDiaSemana": "1",
+        "diaSemana": "Lunes",
+        "cantHoras": "15",
+        "fechaInicio": "03/03/2022",
+        "fechaFin": "04/04/2022",
+        "valorBruto": "3000",
+        "idCurso": "001"
+    },
+
+
+    {
+        "nivel": "Inicial",
+        "horario": "14:00 a 16:00",
+        "profesor": "Lautaro Aguilar",
+        "numeroDiaSemana": "5",
+        "diaSemana": "Lunes",
+        "cantHoras": "15",
+        "fechaInicio": "10/02/2022",
+        "fechaFin": "14/04/2022",
+        "valorBruto": "3000",
+        "idCurso": "002"
+    },
+
+    {
+        "nivel": "Inicial",
+        "horario": "21:00 a 23:00",
+        "profesor": "Marisol Fernandez",
+        "numeroDiaSemana": "5",
+        "diaSemana": "Martes",
+        "cantHoras": "15",
+        "fechaInicio": "10/02/2022",
+        "fechaFin": "14/04/2022",
+        "valorBruto": "3000",
+        "idCurso": "003"
+    },
+
+    {
+        "nivel": "Inicial",
+        "horario": "12:00 a 14:00",
+        "profesor": "Marisol Fernandez",
+        "numeroDiaSemana": "4",
+        "diaSemana": "Jueves",
+        "cantHoras": "15",
+        "fechaInicio": "22/02/2022",
+        "fechaFin": "24/04/2022",
+        "valorBruto": "3000",
+        "idCurso": "004"
+    },
+
+    {
+        "nivel": "Intermedio",
+        "horario": "18:00 a 20:00",
+        "profesor": "Lautaro Aguilar",
+        "numeroDiaSemana": "1",
+        "diaSemana": "Martes",
+        "cantHoras": "20",
+        "fechaInicio": "02/02/2022",
+        "fechaFin": "24/04/2022",
+        "valorBruto": "3500",
+        "idCurso": "005"
+    },
+
+    {
+        "nivel": "Intermedio",
+        "horario": "22:00 a 24:00",
+        "profesor": "Lautaro Aguilar",
+        "numeroDiaSemana": 2,
+        "diaSemana": "Martes",
+        "cantHoras": "20",
+        "fechaInicio": "02/02/2022",
+        "fechaFin": "04/04/2022",
+        "valorBruto": "3500",
+        "idCurso": "006"
+    },
+
+    {
+        "nivel": "Intermedio",
+        "horario": "10:00 a 12:00",
+        "profesor": "Marisol Fernandez",
+        "numeroDiaSemana": 1,
+        "diaSemana": "Lunes",
+        "cantHoras": "20",
+        "fechaInicio": "02/02/2022",
+        "fechaFin": "04/04/2022",
+        "valorBruto": "3500",
+        "idCurso": "007"
+    },
+
+    {
+        "nivel": "Avanzado",
+        "horario": "13:00 a 15:00",
+        "profesor": "Marisol Fernandez",
+        "numeroDiaSemana": "2",
+        "diaSemana": "Martes",
+        "cantHoras": "40",
+        "fechaInicio": "25/02/2022",
+        "fechaFin": "04/04/2022",
+        "valorBruto": "4000",
+        "idCurso": "010"
+    },
+
+
+    {
+        "nivel": "Avanzado",
+        "horario": "16:00 a 18:00",
+        "profesor": "Renzo Polzella",
+        "numeroDiaSemana": "5",
+        "diaSemana": "Vierens",
+        "cantHoras": "40",
+        "fechaInicio": "30/02/2022",
+        "fechaFin": "04/04/2022",
+        "valorBruto": "4000",
+        "idCurso": "011"
+    },
+
+    {
+        "nivel": "Avanzado",
+        "horario": "19:30 a 21:30",
+        "profesor": "Renzo Polzella",
+        "numeroDiaSemana": 4,
+        "diaSemana": "Jueves",
+        "cantHoras": "40",
+        "fechaInicio": "20/02/2022",
+        "fechaFin": "04/04/2022",
+        "valorBruto": "4000",
+        "idCurso": "012"
+    },
+
+    {
+        "nivel": "Avanzado",
+        "horario": "17:00 a 19:00",
+        "profesor": "Lautaro Aguilar",
+        "numeroDiaSemana": "6",
+        "diaSemana": "Lunes",
+        "cantHoras": "40",
+        "fechaInicio": "28/02/2022",
+        "fechaFin": "04/04/2022",
+        "valorBruto": "4000",
+        "idCurso": "0113"
+    }
+
+
+
+
+
+
+
+
+]

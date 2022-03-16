@@ -35,10 +35,13 @@ const muestraSeleccionCurso = () => {
 
     const tituloContenedorPlanBeca = document.getElementById("contenedorPlanBeca");
     let headerContenedorPlanEscribe = document.createElement("div");
-    headerContenedorPlanEscribe.className = "headerContenedorPlan";
+    headerContenedorPlanEscribe.className = "headerContenedorPlanBeca";
     headerContenedorPlanEscribe.id = "headerContenedorPlanBeca"
     headerContenedorPlanEscribe.innerHTML = `
-       <h5 class="tituContenedorPlan">Plan Beca $${cursoElegidoReserva.totalNeto}</h5>
+        <div> <h5 class="tituContenedorPlan">Plan Beca $${cursoElegidoReserva.totalNeto}</h5> 
+        </div>
+       
+       <div class = "recomendado"> Recomendado </div>
        `
     tituloContenedorPlanBeca.prepend(headerContenedorPlanEscribe);
 

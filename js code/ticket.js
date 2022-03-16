@@ -123,5 +123,27 @@ contenedorTicketEscribe.innerHTML = `
 </div>
 `
 contenedorTicket.appendChild(contenedorTicketEscribe);
+localStorage.clear()
 
 
+
+const testButton = document.getElementById("testButton")
+
+
+// imprime
+testButton.addEventListener("click", (e) => {
+      
+        let pdf = new jsPDF
+        ({
+            orientation: 'p',
+            unit: 'pt',
+            format: 'a4',
+            putOnlyUsedFonts:true,
+            precision: 2
+           })
+        pdf.html(document.getElementById('contenedorTicket'), {
+            callback: function (pdf) {
+                pdf.save('Comprobante.pdf');
+            }
+        });
+    })
