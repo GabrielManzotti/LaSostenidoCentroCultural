@@ -316,31 +316,31 @@ const muestraCursos = () => {
         ` <div class="contenedorPorListado" id=${arrayListadoCursoFiltrado.idCurso}>
       <div class= contenedorNivel>  
           <p class="tituloListado">Día</p>
-          <p>${arrayListadoCursoFiltrado.diaSemana}</p>
+          <p class="variableListado">${arrayListadoCursoFiltrado.diaSemana}</p>
       </div>
       <div class= contenedorNivel>  
           <p class="tituloListado">Horario</p>
-          <p>${arrayListadoCursoFiltrado.horario}</p>
+          <p class="variableListado">${arrayListadoCursoFiltrado.horario}</p>
       </div>
       <div class="contenedorNivel">
           <p class="tituloListado">Fecha</p>
-          <p><strong>${arrayListadoCursoFiltrado.fechaInicio}</strong> hasta <strong>${arrayListadoCursoFiltrado.fechaFin}</strong></p>
+          <p class="variableListado"><strong>${arrayListadoCursoFiltrado.fechaInicio}</strong> hasta <strong>${arrayListadoCursoFiltrado.fechaFin}</strong></p>
       </div>
       <div class= contenedorNivel>  
           <p class="tituloListado">Nivel</p>
-          <p>${arrayListadoCursoFiltrado.nivel}</p>
+          <p class="variableListado">${arrayListadoCursoFiltrado.nivel}</p>
       </div>
       <div class= contenedorNivel>  
           <p class="tituloListado">Hs. totales</p>
-          <p>${arrayListadoCursoFiltrado.cantHoras}</p>
+          <p class="variableListado">${arrayListadoCursoFiltrado.cantHoras}</p>
       </div>
       <div class= contenedorNivel>  
       <p class="tituloListado">Profesor@</p>
-      <p>${arrayListadoCursoFiltrado.profesor}</p>
+      <p class="variableListado">${arrayListadoCursoFiltrado.profesor}</p>
   </div>
       <div class= contenedorNivel>  
       <p class="tituloListado">Valor</p>
-      <p>${arrayListadoCursoFiltrado.valorBruto}</p>
+      <p class="variableListado">${arrayListadoCursoFiltrado.valorBruto}</p>
       </div>
       <div class="botonContinuar" id="seleccionaCurso">
         <a type="button" id="botonSeleccionaElCurso${arrayListadoCursoFiltrado.idCurso}" 

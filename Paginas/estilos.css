@@ -212,6 +212,7 @@ a:hover {
 
 .contenedorUlListados {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -242,22 +243,25 @@ li.liListados {
 .contenedorPorListado {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
     border-bottom: solid 1.5px black;
     width: 100%;
     margin-top: 20px;
-    height: 100px;
+    height: 150px;
 }
 
 .pruebaClassName {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     align-content: center;
+    height: 100;
 
 }
 
@@ -271,8 +275,14 @@ li.liListados {
     align-content: center;
 }
 
-.tituloListado {
+
+.variableListado {
+    font-size: 16px;
     font-weight: 500;
+}
+
+.tituloListado {
+    font-weight: 600;
     font-size: 20px;
 }
 
@@ -514,30 +524,37 @@ li.liListados {
 
 .headerContenedorPlan {
     padding-top: 20px;
-    padding-left: 10px;
     border-bottom: 3px solid black;
-    margin-left: 10px;
-    width: 30%;
- 
+    width: 100%;
+
 }
 
 .headerContenedorPlanBeca {
     padding-top: 20px;
-    padding-left: 10px;
     border-bottom: 3px solid black;
-    margin-left: 10px;
-    width: 25%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: flex-start;
     align-content: center;
     flex-wrap: wrap;
- 
+
 }
+
+
 
 .tituContenedorPlan {
     font-weight: 700;
+    padding: 10px;
+}
+
+.recomendado {
+    font-weight: 700;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    border-radius: 3px;
 }
 
 .subContenedor {
@@ -1065,7 +1082,7 @@ li.liListados {
     margin-top: 30px;
 }
 
-.seccionContenedorTicket{
+.seccionContenedorTicket {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1085,7 +1102,7 @@ li.liListados {
     width: 60%;
 }
 
-.contenedorFila{
+.contenedorFila {
     margin-top: 10px;
     width: 100%;
     height: 50px;
@@ -1097,7 +1114,7 @@ li.liListados {
     align-content: center;
 }
 
-.valorFijo{
+.valorFijo {
     padding-top: 10px;
     padding-left: 20px;
     width: 35%;
@@ -1108,7 +1125,7 @@ li.liListados {
     font-weight: 500;
 }
 
-.valorVariable{
+.valorVariable {
     padding-top: 10px;
     padding-left: 20px;
     width: 50%;
@@ -1116,10 +1133,15 @@ li.liListados {
 
 .valorVariable p {
     font-size: 16px;
+
+}
+
+.errorCompletitud {
+    margin-top: -100px;
     
 }
 
-.imagenTitulo{
+.imagenTitulo {
     margin-top: 10px;
     width: 100%;
     height: 150px;
@@ -1130,12 +1152,12 @@ li.liListados {
     align-content: center;
 }
 
-.logoTicket{
-    width: 250px ;
+.logoTicket {
+    width: 250px;
     height: auto;
 }
 
-.contenedorDatosTicket{
+.contenedorDatosTicket {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1145,7 +1167,7 @@ li.liListados {
     height: 1100px;
 }
 
-.comprobanteValido{
+.comprobanteValido {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1154,7 +1176,7 @@ li.liListados {
     width: 80%;
 }
 
-.contenedorFilaValido{
+.contenedorFilaValido {
     margin-top: 10px;
     width: 100%;
     height: 50px;
@@ -1167,21 +1189,111 @@ li.liListados {
     font-weight: 500;
 }
 
-.buttonRadiousAndMoreDescargar{
-margin-top: 40px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-align-content: center;
-height: 70px;
-width: 250px;
-border-radius: 6px;
-font-family: 'Montserrat', sans-serif;
-font-size: 14.4px;
-background-color: black;
-opacity: 0.90;
-color: white;
-font-weight: 700;
-border: 2px solid white;
+.buttonRadiousAndMoreDescargar {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 70px;
+    width: 250px;
+    border-radius: 6px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14.4px;
+    background-color: black;
+    opacity: 0.90;
+    color: white;
+    font-weight: 700;
+    border: 2px solid white;
+}
+
+
+@media screen and (max-width: 1300px) {
+
+    .contenedorPorListado {
+        height: 220px;
+        flex-wrap: nowrap;
+    }
+
+    .contenedorNivel {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+    .contenedorPorListado {
+        height: 500px;
+        flex-wrap: wrap;
+    }
+
+    .reservaCursoElegido {
+        height: 500px;
+        flex-wrap: wrap;
+    }
+
+    
+
+}
+
+@media screen and (max-width: 1100px) {
+
+    .contenedorPorListado {
+        height: 500px;
+        justify-content: flex-start;
+    }
+
+    .reservaCursoElegido {
+        height: 500px;
+        justify-content: flex-start;
+    }
+
+    .contenedorPlanBeca{
+        height: ;
+    }
+
+    .subContenedor{
+
+    }
+
+    .seccionContenedoresPlan{
+        height: 1000px;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .contenedorPorListado {
+        height: 650px;
+
+    }
+
+    .reservaCursoElegido {
+        height: 650px;
+
+    }
+
+    .seccionCarritoCursoElegido {
+        height: 600px;
+        justify-content: center;
+
+    }
+
+    .tituloSubrayado {
+        width: 280px;
+    }
+
+    .tituloSubrayadoDia {
+        width: 280px;
+    }
+
+    .tituloSubrayadoListadoCursos {
+        width: 280px;
+    }
+
+    
 }
